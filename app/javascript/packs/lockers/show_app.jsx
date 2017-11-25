@@ -13,7 +13,7 @@ class ShowApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      number: 0
+      locker_status: {}
     };
     this.timer = this.timer.bind(this);
   }
@@ -34,7 +34,6 @@ class ShowApp extends React.Component {
     return (
       <div className="wrapper">
         <Lockers locker_state={this.state.number} />
-        <div>{this.state.number}</div>
       </div>
     );
   }

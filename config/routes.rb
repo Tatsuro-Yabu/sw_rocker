@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "lockers#index"
   get "lockers", to: "lockers#index"
   get "lockers/show", to: "lockers#show"
+  get "lockers/play", to: "lockers#play"
 end

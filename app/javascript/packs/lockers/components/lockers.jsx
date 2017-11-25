@@ -38,24 +38,16 @@ class Lockers extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderLocker(this.props.locker_state)}
-          {this.renderLocker(this.props.locker_state)}
+      <div className="locker-container">
+          {this.renderLocker(1)}
           {this.renderLocker(2)}
-        </div>
-        <div className="board-row">
           {this.renderLocker(3)}
           {this.renderLocker(4)}
-          {this.renderLocker(5)}
-        </div>
-        <div className="board-row">
-          {this.renderLocker(6)}
-          {this.renderLocker(7)}
-          {this.renderLocker(8)}
-        </div>
-        <div style={divStyle}>{this.props.locker_state}</div>
+          <div className="display">
+            <div className="status-text">
+              空
+            </div>
+          </div>
       </div>
     );
   }
