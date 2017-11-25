@@ -6,30 +6,43 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Locker from './locker'
+// import request from 'superagent';
+
+// let request = require('superagent');
+var request = require('superagent');
+
+const url = {
+  req: 'http://localhost:3000/wp-json/wp/v2/posts'
+}
 
 class Lockers extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null,
-    };
+  receive() {
+    request
+    .get('https://user.mamorio.jp/mamorios.json?auth_token=APQifvzffAh-p97tAf5d'.req) //リクエストするurl
+    .end((err, res) => {
+      if(err) {
+        console.log(err)
+      } else {
+        this.setState({
+          body: res.body,
+          loader: false
+        })
+      }
+    });
   }
 
   renderLocker(i) {
-    return <Locker value={i} />;
+    return <Locker locker_number={i} />;
   }
 
   render() {
-    var divStyle = {
-      color: 'red',
-    };
     return (
       <div>
         <div className="status">{status}</div>
         <div className="board-row">
-          {this.renderLocker(0)}
-          {this.renderLocker(1)}
+          {this.renderLocker(this.props.locker_state)}
+          {this.renderLocker(this.props.locker_state)}
           {this.renderLocker(2)}
         </div>
         <div className="board-row">
