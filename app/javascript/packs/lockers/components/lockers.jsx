@@ -21,6 +21,9 @@ class Lockers extends React.Component {
   }
 
   render() {
+    var divStyle = {
+      color: 'red',
+    };
     return (
       <div>
         <div className="status">{status}</div>
@@ -39,6 +42,7 @@ class Lockers extends React.Component {
           {this.renderLocker(7)}
           {this.renderLocker(8)}
         </div>
+        <div style={divStyle}>{this.props.locker_state}</div>
       </div>
     );
   }
