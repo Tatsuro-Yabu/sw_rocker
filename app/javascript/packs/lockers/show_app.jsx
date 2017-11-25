@@ -14,12 +14,25 @@ class ShowApp extends React.Component {
     this.state = {
       number: 0
     };
+    this.timer = this.timer.bind(this);
+  }
+
+  componentDidMount() {
+    this.countdown = setInterval(this.timer, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.countdown);
+  }
+
+  timer() {
+    this.setState({ number: this.state.number + 1 });
   }
 
   render() {
     return (
       <div className="wrapper">
-        <Lockers locker_state={this.state.locker_state} />
+        <Lockers locker_state={this.state.number} />
         <div>{this.state.number}</div>
       </div>
     );
