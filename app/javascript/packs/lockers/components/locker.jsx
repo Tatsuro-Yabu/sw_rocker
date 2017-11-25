@@ -8,18 +8,11 @@ import PropTypes from 'prop-types'
 
 class Locker extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
-
   render() {
     return (
       <button className="locker" onClick={() => this.setState({value: 'X'})} >
         <div className="totte"></div>
-        {this.state.value}
+        {this.props.locker_number}
       </button>
     );
   }
