@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>東京駅構内ロッカーマップ</title>
+</head>
+<body>
+
+	<header></header>
+	
+	<h1>東京駅構内ロッカーマップ</h1>
+	<div id="station_map">
+		<div class="pin-a">
+			<%= image_tag("tokyo_station_1f.jpg") %>
+		</div>
+		<div class="pin-b">
+			<a href="/lockers/show">
+				<%= image_tag("coin_locker.png") %>
+			</a>
+		</div>
+		<div class="pin-c">
+			<a href="/lockers/show">
+				<%= image_tag("coin_locker.png") %>
+			</a>
+		</div>
+		<div class="pin-d">
+			<a href="/lockers/show">
+				<%= image_tag("coin_locker.png") %>
+			</a>
+		</div>
+		<div class="pin-e">
+			<a href="/lockers/show">
+				<%= image_tag("coin_locker.png") %>
+			</a>
+		</div>
+
+	</div>
+	<div id="app-container"></div>
+
+</body>
+</html>

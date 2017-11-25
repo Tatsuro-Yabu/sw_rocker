@@ -3,14 +3,42 @@
   <head>
     <title>SwRocker</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body>
-  <div class="mdl-layout mdl-js-layout">
-  </div>
-    <%= yield %>
+    <div class="layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Locker</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">ロッカーを探す</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Material Design</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">ロッカーを探す</a>
+          <a class="mdl-navigation__link" href=""></a>
+          <a class="mdl-navigation__link" href="">foo</a>
+          <a class="mdl-navigation__link" href="">bar</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+      <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
