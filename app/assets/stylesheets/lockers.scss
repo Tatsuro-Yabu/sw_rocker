@@ -1,3 +1,19 @@
 // Place all the styles related to the Lockers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  text-align: center;
+}
+.locker {
+  background: #DEDAC0;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+.totte {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: red;
+}
