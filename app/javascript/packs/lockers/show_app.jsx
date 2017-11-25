@@ -8,10 +8,19 @@ import PropTypes from 'prop-types'
 import Lockers from './components/lockers'
 
 class ShowApp extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0
+    };
+  }
+
   render() {
     return (
       <div className="wrapper">
-        <Lockers />
+        <Lockers locker_state={this.state.locker_state} />
+        <div>{this.state.number}</div>
       </div>
     );
   }
