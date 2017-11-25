@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+img{
+	width: 1000px;
+}
+
+#station_map{
+	position:relative;
+}
+
+#station_map .pin-a{
+	position:absolute;
+}
+
+#station_map .pin-b{
+	position:absolute;
+	margin: 255px 165px;
+}
+
+#station_map .pin-b img{
+	width: 50px;
+}
+
+#station_map .pin-c{
+	position:absolute;
+	margin: 545px 430px;
+}
+
+#station_map .pin-c img{
+	width: 50px;
+}
+
+#station_map .pin-d{
+	position:absolute;
+	margin: 540px 570px;
+}
+
+#station_map .pin-d img{
+	width: 50px;
+}
+
+#station_map .pin-e{
+	position:absolute;
+	margin: 495px 800px;
+}
+
+#station_map .pin-e img{
+	width: 50px;
+}
+
+
+
+
+
+
+
