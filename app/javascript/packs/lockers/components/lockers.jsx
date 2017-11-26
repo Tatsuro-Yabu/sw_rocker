@@ -32,14 +32,14 @@ class Lockers extends React.Component {
   //   });
   // }
 
-  renderLocker(i) {
-    return <Locker locker_number={i} />;
+  renderLocker(i,status) {
+    return <Locker locker_number={i} locker_state={status}/>;
   }
 
   render() {
     return (
       <div className="locker-container">
-          {this.renderLocker(this.setState.locker_state)}
+          {this.renderLocker(1,this.state.locker_status_one)}
           {this.renderLocker(2)}
           {this.renderLocker(3)}
           {this.renderLocker(4)}
