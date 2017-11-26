@@ -27,37 +27,20 @@ class ShowApp extends React.Component {
   }
 
   fetchData() {
-    console.log("fetch data called");
-
     fetch(REQUEST_URL)
       .then((response) => response.json())
     .then((responseData) => {
       let locker_state = Object.assign({}, this.state.locker_state);
       locker_state.locker_status_one = responseData[0]['status']
       locker_state.locker_status_two = responseData[1]['status']
-      locker_state.locker_status_three = responseData[2]['status']
-      locker_state.locker_status_four = responseData[3]['status']
+      locker_state.locker_status_three = responseData[3]['status']
+      locker_state.locker_status_four = responseData[2]['status']
       this.setState({locker_state})
     })
   }
 
   componentWillUnmount() {
     clearInterval(this.countdown);
-  }
-
-  // componentDidMount() {
-  //   this.countdown = setInterval(this.timer, 1000);
-  // }
-
-  extractLockerStatus(responseData){
-    // TODO: extract status
-    // {
-      //   1: "verified",
-      //   2: "lost",
-      //   3: "lost",
-      //   4: "verified"
-      // }
-    return status
   }
 
   render() {

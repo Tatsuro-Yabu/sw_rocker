@@ -8,13 +8,23 @@ import PropTypes from 'prop-types'
 
 class Locker extends React.Component {
   render() {
-    return (
-      <button className={"locker-" + this.props.locker_number} onClick={() => this.setState({value: 'X'})} >
-        <div className="totte"></div>
-        {this.props.locker_number}
-        {this.props.locker_state}
-      </button>
-    );
+    if(this.props.locker_state == "lost"){
+      return (
+        <button className={"locker-" + this.props.locker_number + ' ' + this.props.locker_state} onClick={() => this.setState({value: 'X'})} >
+          <div className="totte"></div>
+          {/*{this.props.locker_number}*/}
+          {/*{this.props.locker_state}*/}
+        </button>
+      );
+    } else {
+      return (
+        <button className={"locker-" + this.props.locker_number} onClick={() => this.setState({value: 'X'})} >
+          <div className="totte"></div>
+          {/*{this.props.locker_number}*/}
+          {/*{this.props.locker_state}*/}
+        </button>
+      );
+    }
   }
 }
 
