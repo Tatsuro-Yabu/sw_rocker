@@ -16,7 +16,10 @@ class ShowApp extends React.Component {
     super(props);
     this.state = {
       locker_state: {
-        "locker_status_one": ""
+        "locker_status_one": "",
+        "locker_status_two": "",
+        "locker_status_three": "",
+        "locker_status_four": ""
       }
     };
     this.timer = this.timer.bind(this);
@@ -32,6 +35,9 @@ class ShowApp extends React.Component {
       debugger
       let locker_state = Object.assign({}, this.state.locker_state);
       locker_state.locker_status_one = responseData[0]['status']
+      locker_state.locker_status_two = responseData[1]['status']
+      locker_state.locker_status_three = responseData[2]['status']
+      locker_state.locker_status_four = responseData[3]['status']
       this.setState({locker_state})
     })
   }
