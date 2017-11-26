@@ -7,23 +7,58 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Lockers from './components/lockers'
 
+const REQUEST_URL = 'https://user.mamorio.jp/mamorios.json?auth_token=APQifvzffAh-p97tAf5d'
+
 
 class ShowApp extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      locker_status: {}
+      locker_state: {
+        1: "verified",
+        2: "lost",
+        3: "lost",
+        4: "verified"
+      }
     };
     this.timer = this.timer.bind(this);
+    
+  }
+
+  fetchData() {
+    fetch(REQUEST_URL)
+      .then((response) => response.json())
+    .then((responseData) => {
+      // debugger
+      this.setState({
+        locker_state: {
+          1: responseData[0]['status'],
+          2: responseData[1]['status'],
+          3: responseData[2]['status'],
+          4: responseData[3]['status'],
+        },
+      })
+    })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.countdown);
   }
 
   componentDidMount() {
     this.countdown = setInterval(this.timer, 1000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.countdown);
+  extractLockerStatus(responseData){
+    // TODO: extract status
+    // {
+      //   1: "verified",
+      //   2: "lost",
+      //   3: "lost",
+      //   4: "verified"
+      // }
+    return status
   }
 
   timer() {

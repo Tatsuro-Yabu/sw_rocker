@@ -11,26 +11,26 @@ import Locker from './locker'
 // let request = require('superagent');
 var request = require('superagent');
 
-const url = {
-  req: 'http://localhost:3000/wp-json/wp/v2/posts'
-}
+// const url = {
+//   req: 'http://localhost:3000/wp-json/wp/v2/posts'
+// }
 
 class Lockers extends React.Component {
 
-  receive() {
-    request
-    .get('https://user.mamorio.jp/mamorios.json?auth_token=APQifvzffAh-p97tAf5d'.req) //リクエストするurl
-    .end((err, res) => {
-      if(err) {
-        console.log(err)
-      } else {
-        this.setState({
-          body: res.body,
-          loader: false
-        })
-      }
-    });
-  }
+  // receive() {
+  //   request
+  //   .get('https://user.mamorio.jp/mamorios.json?auth_token=APQifvzffAh-p97tAf5d'.req) //リクエストするurl
+  //   .end((err, res) => {
+  //     if(err) {
+  //       console.log(err)
+  //     } else {
+  //       this.setState({
+  //         body: res.body,
+  //         loader: false
+  //       })
+  //     }
+  //   });
+  // }
 
   renderLocker(i) {
     return <Locker locker_number={i} />;
@@ -39,7 +39,7 @@ class Lockers extends React.Component {
   render() {
     return (
       <div className="locker-container">
-          {this.renderLocker(1)}
+          {this.renderLocker(this.setState.locker_state)}
           {this.renderLocker(2)}
           {this.renderLocker(3)}
           {this.renderLocker(4)}
