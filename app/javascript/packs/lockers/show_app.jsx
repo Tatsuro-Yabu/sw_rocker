@@ -16,14 +16,12 @@ class ShowApp extends React.Component {
     super(props);
     this.state = {
       locker_state: {
-        1: "verified",
-        2: "lost",
-        3: "lost",
-        4: "verified"
+        "locker_status_one": ""
       }
     };
     this.timer = this.timer.bind(this);
-    
+    this.fetchData = this.fetchData.bind(this)
+    this.fetchData();
   }
 
   fetchData() {
@@ -31,14 +29,10 @@ class ShowApp extends React.Component {
       .then((response) => response.json())
     .then((responseData) => {
       // debugger
-      this.setState({
-        locker_state: {
-          1: responseData[0]['status'],
-          2: responseData[1]['status'],
-          3: responseData[2]['status'],
-          4: responseData[3]['status'],
-        },
-      })
+      debugger
+      let locker_state = Object.assign({}, this.state.locker_state);
+      locker_state.locker_status_one = responseData[0]['status']
+      this.setState({locker_state})
     })
   }
 
@@ -46,9 +40,9 @@ class ShowApp extends React.Component {
     clearInterval(this.countdown);
   }
 
-  componentDidMount() {
-    this.countdown = setInterval(this.timer, 1000);
-  }
+  // componentDidMount() {
+  //   this.countdown = setInterval(this.timer, 1000);
+  // }
 
   extractLockerStatus(responseData){
     // TODO: extract status
@@ -62,7 +56,7 @@ class ShowApp extends React.Component {
   }
 
   timer() {
-    this.setState({ number: this.state.number + 1 });
+    this.fetchData();
   }
 
   render() {
