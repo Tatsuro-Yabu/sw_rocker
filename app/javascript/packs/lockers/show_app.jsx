@@ -22,17 +22,16 @@ class ShowApp extends React.Component {
         "locker_status_four": ""
       }
     };
-    this.timer = this.timer.bind(this);
     this.fetchData = this.fetchData.bind(this)
-    this.fetchData();
+    setInterval(this.fetchData, 3000);
   }
 
   fetchData() {
+    console.log("fetch data called");
+
     fetch(REQUEST_URL)
       .then((response) => response.json())
     .then((responseData) => {
-      // debugger
-      debugger
       let locker_state = Object.assign({}, this.state.locker_state);
       locker_state.locker_status_one = responseData[0]['status']
       locker_state.locker_status_two = responseData[1]['status']
@@ -61,14 +60,10 @@ class ShowApp extends React.Component {
     return status
   }
 
-  timer() {
-    this.fetchData();
-  }
-
   render() {
     return (
       <div className="wrapper">
-        <Lockers locker_state={this.state.number} />
+        <Lockers locker_state={this.state} />
       </div>
     );
   }

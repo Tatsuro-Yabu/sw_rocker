@@ -37,12 +37,13 @@ class Lockers extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className="locker-container">
-          {this.renderLocker(1,this.state.locker_status_one)}
-          {this.renderLocker(2)}
-          {this.renderLocker(3)}
-          {this.renderLocker(4)}
+          {this.renderLocker(1, this.props.locker_state.locker_state.locker_status_one)}
+          {this.renderLocker(2, this.props.locker_state.locker_state.locker_status_two)}
+          {this.renderLocker(3, this.props.locker_state.locker_state.locker_status_three)}
+          {this.renderLocker(4, this.props.locker_state.locker_state.locker_status_four)}
           <div className="display">
             <div className="icon-wrapper">
               <div className="icon"></div>
