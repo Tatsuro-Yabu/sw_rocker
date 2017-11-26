@@ -44,8 +44,8 @@ class Lockers extends React.Component {
           {this.renderLocker(3)}
           {this.renderLocker(4)}
           <div className="display">
-            <div className="status-text">
-              空
+            <div className="icon-wrapper">
+              <div className="icon"></div>
             </div>
           </div>
       </div>
